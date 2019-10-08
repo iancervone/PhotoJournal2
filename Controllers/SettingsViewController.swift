@@ -10,6 +10,11 @@ import UIKit
 
 class SettingsViewController: UIViewController {
   
+  @IBAction func returnBarButton(_ sender: UIBarButtonItem) {
+    dismiss(animated: true, completion: nil)
+  }
+  
+  
   
   @IBAction func scrollDirectionSlider(_ sender: UISlider) {
     let roundedValue = round(sender.value / step) * step
@@ -33,6 +38,8 @@ class SettingsViewController: UIViewController {
   
   let step: Float = 1
   
+  weak var delegate: SettingsDelegate?
+  
   var darkMode: Bool = true
   
   
@@ -45,8 +52,10 @@ class SettingsViewController: UIViewController {
   func darkModeSettings() {
     switch darkMode {
     case true:
+      delegate?.darkModeOn()
       self.view.backgroundColor = .black
     case false:
+      delegate?.darkModeOff()
       self.view.backgroundColor = .gray
     }
   }

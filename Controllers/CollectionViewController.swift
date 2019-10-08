@@ -92,3 +92,15 @@ func showActionSheet(tag: Int) {
   }
 }
 
+extension CollectionViewController: SettingsDelegate {
+  func darkModeOn() {
+    self.view.backgroundColor = .black
+  }
+  
+  func darkModeOff() {
+    self.view.backgroundColor = .gray
+  }
+  
+}
+
+

@@ -11,3 +11,10 @@ import Foundation
 protocol PhotoCellDelegate: AnyObject {
   func showActionSheet(tag: Int)
 }
+
+
+
+protocol SettingsDelegate: AnyObject {
+  func darkModeOn()
+  func darkModeOff()
+}
