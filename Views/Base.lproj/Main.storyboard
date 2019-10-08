@@ -84,7 +84,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gGC-Xt-gWF" firstAttribute="bottom" secondItem="zu6-yM-sFc" secondAttribute="bottom" id="7F5-IT-5wr"/>
                             <constraint firstItem="gGC-Xt-gWF" firstAttribute="top" secondItem="vic-82-khU" secondAttribute="bottom" constant="468" id="F2t-Xy-edm"/>
@@ -176,7 +176,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oM-3R-qWh">
                                 <rect key="frame" x="20" y="0.0" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="29"/>
                                 <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
