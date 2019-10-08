@@ -22,6 +22,7 @@
 		3CF49004234AB7A70009CE09 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF49003234AB7A70009CE09 /* CollectionViewCell.swift */; };
 		3CF4900A234AB8590009CE09 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF49009234AB8590009CE09 /* ImageHelper.swift */; };
 		3CF4900E234AB8EC0009CE09 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF4900D234AB8EC0009CE09 /* PersistenceManager.swift */; };
+		3CF7A7FB234D25F50065A9D5 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF7A7FA234D25F50065A9D5 /* UserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		3CF49003234AB7A70009CE09 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		3CF49009234AB8590009CE09 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		3CF4900D234AB8EC0009CE09 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		3CF7A7FA234D25F50065A9D5 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				3C0A8DB8234BD2CE003987DB /* PhotoJournalModel.swift */,
 				3C0A8DB6234BCFA0003987DB /* PhotoProtocols.swift */,
+				3CF7A7FA234D25F50065A9D5 /* UserDefaults.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				3C0A8DB9234BD2CE003987DB /* PhotoJournalModel.swift in Sources */,
 				3C0A8DBB234BD7B8003987DB /* PhotoJournalPersistence.swift in Sources */,
 				3CF48FDB234AA6540009CE09 /* AppDelegate.swift in Sources */,
+				3CF7A7FB234D25F50065A9D5 /* UserDefaults.swift in Sources */,
 				3CF49001234AB0030009CE09 /* SettingsViewController.swift in Sources */,
 				3CF48FDD234AA6540009CE09 /* SceneDelegate.swift in Sources */,
 				3CF4900A234AB8590009CE09 /* ImageHelper.swift in Sources */,
