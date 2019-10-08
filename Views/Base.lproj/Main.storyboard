@@ -139,7 +139,7 @@
                                 <color key="minimumTrackTintColor" red="0.2262213723" green="0.5050997237" blue="0.63148669999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="maximumTrackTintColor" red="0.22622137227292474" green="0.50509972366089506" blue="0.63148670004720819" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <action selector="scrollDirectionSlider:" destination="1pn-gY-FWG" eventType="valueChanged" id="u87-G9-AjL"/>
+                                    <action selector="scrollDirectionSliderPressed:" destination="1pn-gY-FWG" eventType="valueChanged" id="u87-G9-AjL"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="light" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byt-1R-cv8">
@@ -169,8 +169,8 @@
                                 <color key="minimumTrackTintColor" red="0.2262213723" green="0.5050997237" blue="0.63148669999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="maximumTrackTintColor" red="0.2262213723" green="0.5050997237" blue="0.63148669999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <action selector="backgroundColorSlider:" destination="1pn-gY-FWG" eventType="valueChanged" id="t6w-CW-htJ"/>
-                                    <action selector="scrollDirectionSlider:" destination="1pn-gY-FWG" eventType="valueChanged" id="5rV-ri-UvE"/>
+                                    <action selector="backgroundColorSliderPressed:" destination="1pn-gY-FWG" eventType="valueChanged" id="t6w-CW-htJ"/>
+                                    <action selector="scrollDirectionSliderPressed:" destination="1pn-gY-FWG" eventType="valueChanged" id="5rV-ri-UvE"/>
                                 </connections>
                             </slider>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bup-rh-XoD">
@@ -197,6 +197,9 @@
                         <viewLayoutGuide key="safeArea" id="p8U-ZG-zlP"/>
                     </view>
                     <navigationItem key="navigationItem" id="KSH-na-QOE"/>
+                    <connections>
+                        <outlet property="backgroundColorSlider" destination="cIq-wl-wa1" id="byg-B1-1pZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aA-4b-wvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

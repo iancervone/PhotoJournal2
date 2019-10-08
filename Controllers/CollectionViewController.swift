@@ -17,7 +17,7 @@ class CollectionViewController: UIViewController {
   
   
   
-  
+  var mode: Bool = true
   
   var photos = [PhotoJournalModel] () {
     didSet {
@@ -30,9 +30,30 @@ class CollectionViewController: UIViewController {
         super.viewDidLoad()
       photoCollectionView.delegate = self
       photoCollectionView.dataSource = self
+      loadDefaultSettings()
 //      loadPhotos()
     }
-    
+  
+  private func loadDefaultSettings() {
+    if let userMode = UserDefaultsWrapper.wrapper.getMode() {
+      mode = userMode
+    }
+    setUserSettings()
+  }
+  
+  
+ private func setUserSettings() {
+    switch mode {
+    case true:
+      self.view.backgroundColor = .black
+    case false:
+      self.view.backgroundColor = .gray
+    }
+  }
+  
+  
+  
+  
   
  private func loadPhotos() {
     do {
