@@ -15,6 +15,9 @@ class CollectionViewController: UIViewController {
   @IBAction func addPhotoBarButton(_ sender: UIBarButtonItem) {
   }
   
+  @IBAction func optionsButton(_ sender: UIButton) {
+    showActionSheet(tag: sender.tag)
+  }
   
   var photos = [PhotoJournalModel] () {
     didSet {

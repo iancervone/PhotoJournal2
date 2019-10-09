@@ -46,6 +46,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="cellOptionsButtonClicked:" destination="1PF-fn-8Gs" eventType="touchUpInside" id="L5R-qQ-gci"/>
+                                                        <action selector="optionsButton:" destination="LGD-2D-o7o" eventType="touchUpInside" id="U2r-Qb-VuZ"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Photo Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTM-1P-GRi">

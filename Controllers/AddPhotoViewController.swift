@@ -19,9 +19,22 @@ class AddPhotoViewController: UIViewController {
     let imagePickerVC = UIImagePickerController()
     imagePickerVC.delegate = self
     imagePickerVC.sourceType = .photoLibrary
+    
+    if cameraPermission {
+      imagePickerVC.delegate = self
+      present(imagePickerVC, animated: true, completion: nil)
+    } else {
+      let alertVC = UIAlertController(title: "Access Required", message: "Camera Access is required to take photos", preferredStyle: .alert)
+      alertVC.addAction(UIAlertAction(title: "Deny", style: .destructive, handler: nil))
+      
+      alertVC.addAction(UIAlertAction(title: "Allow", style: .default, handler: nil))
+      self.present(alertVC, animated: true, completion: nil)
+      
+    }
   
     present(imagePickerVC, animated: true, completion: nil)
-  }
+    self.cameraPermission = true
+    self.present(imagePickerVC, animated: true, completion: nil)  }
   
   @IBAction func addFromLibrary(_ sender: UIBarButtonItem) {
     let imagePickerVC = UIImagePickerController()
@@ -32,11 +45,12 @@ class AddPhotoViewController: UIViewController {
       imagePickerVC.delegate = self
       present(imagePickerVC, animated: true, completion: nil)
     } else {
-      let alertVC = UIAlertController(title: "No Access", message: "Camera access is required for this app", preferredStyle: .alert)
+      let alertVC = UIAlertController(title: "Access Required", message: "Library access is required to add photos", preferredStyle: .alert)
+      
       alertVC.addAction(UIAlertAction(title: "Deny", style: .destructive, handler: nil))
       self.present(alertVC, animated: true, completion: nil)
       
-      alertVC.addAction(UIAlertAction(title: "Give access", style: .default, handler: {(action) in
+      alertVC.addAction(UIAlertAction(title: "Allow", style: .default, handler: {(action) in
         self.libraryPermission = true
         self.present(imagePickerVC, animated: true, completion: nil)
       }))
@@ -70,6 +84,7 @@ class AddPhotoViewController: UIViewController {
   
   
   var libraryPermission = false
+  var cameraPermission = false
   
   var image = UIImage() {
     didSet {
