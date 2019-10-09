@@ -64,6 +64,8 @@ class AddPhotoViewController: UIViewController {
     let journalEntry = PhotoJournalModel(caption: caption, photoData: imageData)
 
     try? PhotoJounralPersistenceManager.manager.saveJournal(photoJournal: journalEntry)
+//    navigationController?.popViewController(animated: true)
+    dismiss(animated: true, completion: nil)
   }
   
   

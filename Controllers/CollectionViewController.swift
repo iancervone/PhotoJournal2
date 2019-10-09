@@ -16,23 +16,37 @@ class CollectionViewController: UIViewController {
   }
   
   
-  
-  var mode: Bool = true
-  
   var photos = [PhotoJournalModel] () {
     didSet {
       self.photoCollectionView.reloadData()
     }
   }
   
-  
+  private var mode: Bool = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
       photoCollectionView.delegate = self
       photoCollectionView.dataSource = self
-      loadDefaultSettings()
+//      loadDefaultSettings()
 //      loadPhotos()
     }
+  override func viewWillAppear(_ animated: Bool) {
+    loadPhotos()
+    loadDefaultSettings()
+  }
+  
+  
+  private func loadPhotos() {
+     do {
+       let savedPhotos = try PhotoJounralPersistenceManager.manager.getJournal()
+      self.photos = savedPhotos
+     } catch {
+       print(error)
+      return
+     }
+   }
+  
   
   private func loadDefaultSettings() {
     if let userMode = UserDefaultsWrapper.wrapper.getMode() {
@@ -40,7 +54,6 @@ class CollectionViewController: UIViewController {
     }
     setUserSettings()
   }
-  
   
  private func setUserSettings() {
     switch mode {
@@ -50,19 +63,6 @@ class CollectionViewController: UIViewController {
       self.view.backgroundColor = .gray
     }
   }
-  
-  
-  
-  
-  
- private func loadPhotos() {
-    do {
-      photos = try PhotoJounralPersistenceManager.manager.getJournal()
-    } catch {
-      print(error)
-    }
-  }
-
   
 
     
@@ -76,7 +76,7 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? CollectionViewCell else {
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? CollectionViewCell else {
       fatalError("expecting CollectionViewCell but got a different type")
     }
     let photo = photos[indexPath.row]

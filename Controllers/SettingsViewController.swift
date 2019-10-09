@@ -40,10 +40,8 @@ class SettingsViewController: UIViewController {
   }
   
   let step: Float = 1
-  
-//  weak var delegate: SettingsDelegate?
-  
-  var darkMode: Bool = true
+    
+  private var darkMode: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,28 +57,13 @@ class SettingsViewController: UIViewController {
      darkModeSettings()
    }
    
-   
-//  private func setUserSettings() {
-//     switch mode {
-//     case true:
-//       self.view.backgroundColor = .black
-//     case false:
-//       self.view.backgroundColor = .gray
-//     }
-//   }
   
-  
-  
-  
-  
-  func darkModeSettings() {
+  private func darkModeSettings() {
     switch darkMode {
     case true:
-//      delegate?.darkModeOn()
       self.view.backgroundColor = .black
       backgroundColorSlider.value = 1
     case false:
-//      delegate?.darkModeOff()
       self.view.backgroundColor = .gray
       backgroundColorSlider.value = 0
     }
