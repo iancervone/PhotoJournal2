@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController {
     dismiss(animated: true, completion: nil)
   }
   
-  @IBAction func scrollDirectionSliderPressed(_ sender: UISlider) {
+  @IBAction func backgroundColorSliderPressed(_ sender: UISlider) {
     let roundedValue = round(sender.value / step) * step
     sender.value = roundedValue
     
@@ -33,7 +33,7 @@ class SettingsViewController: UIViewController {
     }
   }
 
-  @IBAction func backgroundColorSliderPressed(_ sender: UISlider) {
+  @IBAction func scrollDirectionSliderPressed(_ sender: UISlider) {
     let roundedValue = round(sender.value / step) * step
     sender.value = roundedValue
     
@@ -64,7 +64,7 @@ class SettingsViewController: UIViewController {
       self.view.backgroundColor = .black
       backgroundColorSlider.value = 1
     case false:
-      self.view.backgroundColor = .gray
+      self.view.backgroundColor = .darkGray
       backgroundColorSlider.value = 0
     }
   }

@@ -58,16 +58,17 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6u8-2f-Cx6">
                                                     <rect key="frame" x="0.0" y="0.0" width="364" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ID-OG-Wnz">
                                                     <rect key="frame" x="0.0" y="271" width="364" height="42"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
-                                                    <state key="normal" title="..."/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                                    <state key="normal" title="...">
+                                                        <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="cellOptionsButtonTapped:" destination="yOV-2j-aLm" eventType="touchUpInside" id="trO-QO-YnU"/>
                                                     </connections>
@@ -127,7 +128,7 @@
                                 <color key="minimumTrackTintColor" red="0.2262213723" green="0.5050997237" blue="0.63148669999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="maximumTrackTintColor" red="0.22622137227292474" green="0.50509972366089506" blue="0.63148670004720819" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <action selector="scrollDirectionSliderPressed:" destination="1pn-gY-FWG" eventType="valueChanged" id="u87-G9-AjL"/>
+                                    <action selector="backgroundColorSliderPressed:" destination="1pn-gY-FWG" eventType="valueChanged" id="u87-G9-AjL"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="light" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byt-1R-cv8">
@@ -153,8 +154,8 @@
                                 <color key="minimumTrackTintColor" red="0.2262213723" green="0.5050997237" blue="0.63148669999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="maximumTrackTintColor" red="0.2262213723" green="0.5050997237" blue="0.63148669999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <action selector="backgroundColorSliderPressed:" destination="1pn-gY-FWG" eventType="valueChanged" id="t6w-CW-htJ"/>
-                                    <action selector="scrollDirectionSliderPressed:" destination="1pn-gY-FWG" eventType="valueChanged" id="5rV-ri-UvE"/>
+                                    <action selector="backgroundColorSliderPressed:" destination="1pn-gY-FWG" eventType="valueChanged" id="5rV-ri-UvE"/>
+                                    <action selector="scrollDirectionSliderPressed:" destination="1pn-gY-FWG" eventType="valueChanged" id="t6w-CW-htJ"/>
                                 </connections>
                             </slider>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bup-rh-XoD">

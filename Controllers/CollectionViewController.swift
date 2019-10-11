@@ -50,19 +50,19 @@ class CollectionViewController: UIViewController {
    }
   
   
-  private func loadDefaultSettings() {
+  func loadDefaultSettings() {
     if let userMode = UserDefaultsWrapper.wrapper.getMode() {
       mode = userMode
     }
     setUserSettings()
   }
   
- private func setUserSettings() {
+ func setUserSettings() {
     switch mode {
     case true:
       photoCollectionView.backgroundColor = .black
     case false:
-      photoCollectionView.backgroundColor = .gray
+      photoCollectionView.backgroundColor = .darkGray
     }
   }
   
@@ -131,7 +131,7 @@ extension CollectionViewController: SettingsDelegate {
   }
 
   func darkModeOff() {
-    photoCollectionView.backgroundColor = .gray
+    photoCollectionView.backgroundColor = .darkGray
   }
 
 }
