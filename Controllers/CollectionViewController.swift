@@ -94,7 +94,7 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
 
 extension CollectionViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: 400, height: 400)
+    return CGSize(width: 400, height: 300)
   }
 }
 

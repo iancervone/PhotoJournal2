@@ -16,8 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGC-Xt-gWF">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gGC-Xt-gWF">
                                 <rect key="frame" x="0.0" y="802" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <barButtonItem title="Settings" image="gear" catalog="system" width="268.5" id="1he-WN-wEs">
                                         <connections>
@@ -32,13 +33,10 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n6k-jA-bD6">
-                                <rect key="frame" x="0.0" y="44" width="414" height="383"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n6k-jA-bD6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="758"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.2262213723" green="0.5050997237" blue="0.63148669999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="383" id="ATJ-cb-GTx"/>
-                                    <constraint firstAttribute="width" constant="414" id="aU6-8q-H45"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IFK-fF-K83">
                                     <size key="itemSize" width="364" height="313"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -53,26 +51,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="364" height="313"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ID-OG-Wnz">
-                                                    <rect key="frame" x="159" y="256" width="46" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="cellOptionsButtonTapped:" destination="yOV-2j-aLm" eventType="touchUpInside" id="trO-QO-YnU"/>
-                                                    </connections>
-                                                </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sUv-C9-wmX">
-                                                    <rect key="frame" x="62" y="37" width="240" height="128"/>
+                                                    <rect key="frame" x="0.0" y="44" width="364" height="227"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6u8-2f-Cx6">
-                                                    <rect key="frame" x="8" y="8" width="348" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="364" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ID-OG-Wnz">
+                                                    <rect key="frame" x="0.0" y="271" width="364" height="42"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                                    <state key="normal" title="..."/>
+                                                    <connections>
+                                                        <action selector="cellOptionsButtonTapped:" destination="yOV-2j-aLm" eventType="touchUpInside" id="trO-QO-YnU"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" red="0.88194054369999997" green="0.89422065019999997" blue="0.89414799209999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -87,14 +86,6 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="gGC-Xt-gWF" firstAttribute="top" secondItem="n6k-jA-bD6" secondAttribute="bottom" constant="375" id="QdK-LY-ehq"/>
-                            <constraint firstItem="gGC-Xt-gWF" firstAttribute="trailing" secondItem="n6k-jA-bD6" secondAttribute="trailing" id="cS1-Zq-xjA"/>
-                            <constraint firstItem="n6k-jA-bD6" firstAttribute="leading" secondItem="zu6-yM-sFc" secondAttribute="leading" id="jYC-Db-GeZ"/>
-                            <constraint firstItem="n6k-jA-bD6" firstAttribute="trailing" secondItem="zu6-yM-sFc" secondAttribute="trailing" id="jmr-bW-wXf"/>
-                            <constraint firstItem="n6k-jA-bD6" firstAttribute="top" secondItem="zu6-yM-sFc" secondAttribute="top" id="rZt-sg-67t"/>
-                            <constraint firstItem="gGC-Xt-gWF" firstAttribute="leading" secondItem="n6k-jA-bD6" secondAttribute="leading" id="zXv-Ah-0MY"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zu6-yM-sFc"/>
                     </view>
                     <connections>
