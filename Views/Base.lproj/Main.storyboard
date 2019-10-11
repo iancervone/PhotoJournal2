@@ -216,6 +216,7 @@
                     <navigationItem key="navigationItem" id="KSH-na-QOE"/>
                     <connections>
                         <outlet property="backgroundColorSlider" destination="cIq-wl-wa1" id="byg-B1-1pZ"/>
+                        <outlet property="scrollDirectionSlider" destination="VKG-D1-Urk" id="GnS-61-kYD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aA-4b-wvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
