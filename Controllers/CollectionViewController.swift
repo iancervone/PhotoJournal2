@@ -29,8 +29,8 @@ class CollectionViewController: UIViewController {
         super.viewDidLoad()
       photoCollectionView.delegate = self
       photoCollectionView.dataSource = self
-//      loadDefaultSettings()
-//     loadPhotos()
+      loadDefaultSettings()
+     loadPhotos()
        
     }
   override func viewWillAppear(_ animated: Bool) {
@@ -60,9 +60,9 @@ class CollectionViewController: UIViewController {
  private func setUserSettings() {
     switch mode {
     case true:
-      self.view.backgroundColor = .black
+      photoCollectionView.backgroundColor = .black
     case false:
-      self.view.backgroundColor = .gray
+      photoCollectionView.backgroundColor = .gray
     }
   }
   
@@ -87,14 +87,15 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
     cell.cellOptionsButton.tag = indexPath.row
     cell.cellNameLabel.text = photo.caption
    
-    cell.backgroundColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
+    cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     return cell
   }
 }
 
+
 extension CollectionViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: 400, height: 300)
+    return CGSize(width: 400, height: 320)
   }
 }
 
@@ -104,19 +105,15 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
 extension CollectionViewController: PhotoCellDelegate {
 func showActionSheet(tag: Int) {
     let options = UIAlertController.init(title: "Options", message: "Pick an option", preferredStyle: .actionSheet)
-  
     let shareAction = UIAlertAction.init(title: "Share", style: .default) { (action) in
         let photo = self.photos[tag]
     }
-  
     let deleteAction = UIAlertAction.init(title: "Delete", style: .destructive) { (action) in
         let photo = self.photos[tag]
     }
-  
   let editAction = UIAlertAction.init(title: "Edit", style: .default) { (action) in
     let photo = self.photos[tag]
   }
-  
     let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
     options.addAction(shareAction)
     options.addAction(deleteAction)
@@ -126,13 +123,15 @@ func showActionSheet(tag: Int) {
   }
 }
 
+
+
 extension CollectionViewController: SettingsDelegate {
   func darkModeOn() {
-    self.view.backgroundColor = .black
+    photoCollectionView.backgroundColor = .black
   }
 
   func darkModeOff() {
-    self.view.backgroundColor = .gray
+    photoCollectionView.backgroundColor = .gray
   }
 
 }
