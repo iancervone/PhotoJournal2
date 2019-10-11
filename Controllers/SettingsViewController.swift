@@ -15,7 +15,6 @@ class SettingsViewController: UIViewController {
   
   @IBOutlet weak var scrollDirectionSlider: UISlider!
   
-  
   @IBAction func returnBarButton(_ sender: UIBarButtonItem) {
     dismiss(animated: true, completion: nil)
   }
@@ -40,7 +39,18 @@ class SettingsViewController: UIViewController {
     let roundedValue = round(sender.value / step) * step
     sender.value = roundedValue
     
+    switch sender.value == 1 {
+      case true:
+        scrollVertical = true
+        UserDefaultsWrapper.wrapper.store(scroll: scrollVertical)
+      case false:
+        scrollVertical = false
+        UserDefaultsWrapper.wrapper.store(scroll: scrollVertical)
+      }
+    scrollDirectionSetting()
   }
+  
+  
   
   let step: Float = 1
     
@@ -48,10 +58,13 @@ class SettingsViewController: UIViewController {
   private var scrollVertical = true
   
   
+  
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDefaults()
     }
+  
   
   
   private func loadDefaults() {
@@ -65,6 +78,8 @@ class SettingsViewController: UIViewController {
       scrollDirectionSetting()
    }
    
+  
+  
   private func darkModeSettings() {
     switch darkMode {
     case true:
@@ -81,11 +96,9 @@ class SettingsViewController: UIViewController {
    private func scrollDirectionSetting() {
       switch scrollVertical {
       case true:
-        scrollDirectionSlider.value = 1
-      case false:
         scrollDirectionSlider.value = 0
-  //      photoCollectionView.scrollDirection = .horizontal
-        
+      case false:
+        scrollDirectionSlider.value = 1
       }
     }
 

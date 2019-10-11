@@ -17,4 +17,7 @@ import Foundation
 protocol SettingsDelegate: AnyObject {
   func darkModeOn()
   func darkModeOff()
+  func scrollVertical()
+  func scrollHorizontal()
+  
 }

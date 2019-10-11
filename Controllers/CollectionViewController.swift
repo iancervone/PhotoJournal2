@@ -24,16 +24,18 @@ class CollectionViewController: UIViewController {
   }
   
   private var mode: Bool = true
+  private var verticalDirection: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
       photoCollectionView.delegate = self
       photoCollectionView.dataSource = self
       loadDefaultSettings()
-     loadPhotos()
+      loadPhotos()
        
     }
   override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     loadPhotos()
     loadDefaultSettings()
   }
@@ -54,8 +56,12 @@ class CollectionViewController: UIViewController {
     if let userMode = UserDefaultsWrapper.wrapper.getMode() {
       mode = userMode
     }
+    if let userDirection = UserDefaultsWrapper.wrapper.getScroll() {
+      mode = userDirection
+    }
     setUserSettings()
   }
+  
   
  func setUserSettings() {
     switch mode {
@@ -63,6 +69,16 @@ class CollectionViewController: UIViewController {
       photoCollectionView.backgroundColor = .black
     case false:
       photoCollectionView.backgroundColor = .darkGray
+    }
+  switch verticalDirection {
+  case true:
+    if let flowLayout = photoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+           flowLayout.scrollDirection = .vertical
+       }
+  case false:
+    if let flowLayout = photoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+           flowLayout.scrollDirection = .horizontal
+       }
     }
   }
   
@@ -88,6 +104,7 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
     cell.cellNameLabel.text = photo.caption
    
     cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    cell.delegate = self
     return cell
   }
 }
@@ -95,7 +112,7 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
 
 extension CollectionViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: 400, height: 320)
+    return CGSize(width: 414, height: 320)
   }
 }
 
@@ -133,7 +150,17 @@ extension CollectionViewController: SettingsDelegate {
   func darkModeOff() {
     photoCollectionView.backgroundColor = .darkGray
   }
+  func scrollVertical() {
+    if let flowLayout = photoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+      flowLayout.scrollDirection = .vertical
+    }
+  }
 
+  func scrollHorizontal() {
+    if let flowLayout = photoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+        flowLayout.scrollDirection = .horizontal
+    }
+  }
 }
 
 
