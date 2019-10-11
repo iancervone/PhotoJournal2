@@ -15,9 +15,7 @@ class CollectionViewController: UIViewController {
   @IBAction func addPhotoBarButton(_ sender: UIBarButtonItem) {
   }
   
-  @IBAction func optionsButton(_ sender: UIButton) {
-    showActionSheet(tag: sender.tag)
-  }
+ 
   
   var photos = [PhotoJournalModel] () {
     didSet {
@@ -32,7 +30,8 @@ class CollectionViewController: UIViewController {
       photoCollectionView.delegate = self
       photoCollectionView.dataSource = self
 //      loadDefaultSettings()
-//      loadPhotos()
+//     loadPhotos()
+       
     }
   override func viewWillAppear(_ animated: Bool) {
     loadPhotos()
@@ -72,6 +71,7 @@ class CollectionViewController: UIViewController {
 }
 
 
+//MARK .- Delegates
 
 extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -84,8 +84,17 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     let photo = photos[indexPath.row]
     cell.cellImageView.image = UIImage(data: photo.photoData)
+    cell.cellOptionsButton.tag = indexPath.row
     cell.cellNameLabel.text = photo.caption
+   
+    cell.backgroundColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
     return cell
+  }
+}
+
+extension CollectionViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(width: 400, height: 400)
   }
 }
 
@@ -113,6 +122,7 @@ func showActionSheet(tag: Int) {
     options.addAction(deleteAction)
     options.addAction(editAction)
     options.addAction(cancelAction)
+  self.present(options, animated: true, completion: nil)
   }
 }
 
@@ -120,11 +130,11 @@ extension CollectionViewController: SettingsDelegate {
   func darkModeOn() {
     self.view.backgroundColor = .black
   }
-  
+
   func darkModeOff() {
     self.view.backgroundColor = .gray
   }
-  
+
 }
 
 

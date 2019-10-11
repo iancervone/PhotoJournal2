@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol PhotoCellDelegate: AnyObject {
-  func showActionSheet(tag: Int)
-}
+//protocol PhotoCellDelegate: AnyObject {
+//  func showActionSheet(tag: Int)
+//}
 
 
 

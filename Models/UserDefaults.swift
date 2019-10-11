@@ -12,11 +12,9 @@ class UserDefaultsWrapper {
   static let wrapper = UserDefaultsWrapper()
   
   
-  
   private let modeKey = "mode"
   private let scrollKey = "scroll"
 
-  
   
   func getMode() -> Bool? {
   return UserDefaults.standard.value(forKey: modeKey) as? Bool
@@ -35,5 +33,7 @@ class UserDefaultsWrapper {
   func store(scroll: Bool) {
     UserDefaults.standard.set(scroll, forKey: scrollKey)
   }
+ 
+  
   
 }

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PhotoCellDelegate: AnyObject {
+  func showActionSheet(tag: Int)
+}
+
 class CollectionViewCell: UICollectionViewCell {
     
   @IBOutlet weak var cellNameLabel: UILabel!
@@ -16,10 +20,17 @@ class CollectionViewCell: UICollectionViewCell {
 
   @IBOutlet weak var cellOptionsButton: UIButton!
   
-  @IBAction func cellOptionsButtonClicked(_ sender: UIButton) {
-    delegate?.showActionSheet(tag: sender.tag)
-  }
-  
   weak var delegate: PhotoCellDelegate?
   
+  @IBAction func cellOptionsButtonTapped(_ sender: UIButton) {
+    delegate?.showActionSheet(tag: sender.tag)
+    print("Hi")
+  }
+  
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    self.contentView.isUserInteractionEnabled = true
+
+  }
 }
